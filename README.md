@@ -32,12 +32,6 @@ For Windows:
 ```shellscript
 python -m venv env
 .\env\Scripts\activate.ps1
-````
-
-```bash
-python -m venv env
-env/scripts/activate
-````
 
 For Linux/MacOS:
 
