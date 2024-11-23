@@ -23,6 +23,7 @@ A Django-based REST API that allows listing and managing Pokemon data by consumi
 ````bash
 git clone https://github.com/lamusjc/pokemon-api.git
 cd pokemon-api
+````
 
 2. Create and activate virtual environment
 
