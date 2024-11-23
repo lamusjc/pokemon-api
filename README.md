@@ -32,12 +32,13 @@ For Windows:
 ```shellscript
 python -m venv env
 .\env\Scripts\activate.ps1
+````
 
 For Linux/MacOS:
 
 ```shellscript
 python -m venv env
-source env/scripts/activate
+source env/bin/activate
 ```
 
 3. Install dependencies
