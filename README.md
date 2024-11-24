@@ -172,27 +172,7 @@ pip install -r requirements.txt
 
 ## ⚙️ Configuration
 
-1. Apply database migrations
-
-```shellscript
-python manage.py migrate
-python manage.py makemigrations
-```
-
-2. Create a superuser for admin access
-
-```shellscript
-python manage.py createsuperuser
-```
-
-3. Generate static files for the admin panel
-
-
-```shellscript
-python manage.py collectstatic
-```
-
-4. Create a `.env` file in the root directory:
+1. Create a `.env` file in the root directory:
 
 ```env
 # Django Settings
@@ -218,6 +198,25 @@ ALLOWED_HOSTS=localhost,127.0.0.1
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS=False
 CORS_ALLOWED_ORIGINS=http://localhost:3000,https://yourdomain.com
+```
+
+2. Apply database migrations
+
+```shellscript
+python manage.py migrate
+python manage.py makemigrations
+```
+
+3. Create a superuser for admin access
+
+```shellscript
+python manage.py createsuperuser
+```
+
+4. Generate static files for the admin panel
+
+```shellscript
+python manage.py collectstatic
 ```
 
 ## 🏃‍♂️ Running the Application
