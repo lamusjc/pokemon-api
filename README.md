@@ -65,7 +65,6 @@ cd pokemon-api
 
 2. Create and activate virtual environment
 
-
 For Windows:
 
 ```shellscript
@@ -101,7 +100,14 @@ python manage.py makemigrations
 python manage.py createsuperuser
 ```
 
-3. Create a `.env` file in the root directory:
+3. Generate static files for the admin panel
+
+
+```shellscript
+python manage.py collectstatic
+```
+
+4. Create a `.env` file in the root directory:
 
 ```env
 # Django Settings
