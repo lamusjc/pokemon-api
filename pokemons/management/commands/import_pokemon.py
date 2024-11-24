@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.db import transaction
 from asgiref.sync import sync_to_async
@@ -87,7 +88,7 @@ class Command(BaseCommand):
         start_time = time.time()
         await self.send_update("Tarea de Pokemon iniciada!")
         
-        base_url = 'https://pokeapi.co/api/v2/pokemon'
+        base_url = settings.POKEAPI_BASE_URL
         async with aiohttp.ClientSession() as session:
             pokemon_tasks = []
             for i in range(2):

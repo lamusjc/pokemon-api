@@ -15,6 +15,44 @@ A Django-based REST API that allows listing and managing Pokemon data by consumi
 - Python 3.8 or higher
 - pip (Python package installer)
 - Virtual environment tool
+- Redis server
+
+### Installing Redis Server
+
+#### On Ubuntu/Debian:
+
+```shellscript
+sudo apt update
+sudo apt install redis-server
+```
+
+To start the Redis server:
+
+```shellscript
+sudo systemctl start redis-server
+```
+
+#### On macOS (using Homebrew):
+
+```shellscript
+brew install redis
+```
+
+To start the Redis server:
+
+```shellscript
+brew services start redis
+```
+
+#### On Windows:
+
+1. Download the Redis installer from the official Redis website.
+2. Run the installer and follow the prompts.
+3. After installation, you can start Redis from the command prompt:
+
+```shellscript
+redis-server
+```
 
 ## 🚀 Installation
 
@@ -66,13 +104,29 @@ python manage.py createsuperuser
 3. Create a `.env` file in the root directory:
 
 ```env
-SECRET_KEY=YOUR-SECRET-KEY
-DEBUG=False
-DB_NAME=database
-DB_USER=postgres
-DB_PASSWORD=password
+# Django Settings
+SECRET_KEY=your-secret-key-here
+DEBUG=True # Set to False in production
+
+# Database Configuration
+DB_NAME=your_database_name
+DB_USER=your_database_user
+DB_PASSWORD=your_database_password
 DB_HOST=localhost
 DB_PORT=5432
+
+# Redis Configuration
+REDIS_HOST=127.0.0.1
+
+# API Keys
+POKEAPI_BASE_URL=https://pokeapi.co/api/v2/pokemon
+
+# Security Settings
+ALLOWED_HOSTS=localhost,127.0.0.1
+
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS=False
+CORS_ALLOWED_ORIGINS=http://localhost:3000,https://yourdomain.com
 ```
 
 ## 🏃‍♂️ Running the Application
@@ -83,16 +137,16 @@ DB_PORT=5432
 daphne -b 0.0.0.0 -p 8000 project.asgi:application
 ```
 
-2. In a separate terminal, run the static files server:
+2. Or to run the application in a development environment, use the following command (do not use in production):
 
 ```shellscript
-python manage.py runserver 8001
+python manage.py runserver 8000
 ```
 
 The application will be available at:
 
-- Main API: [http://localhost:8000](http://localhost:8000)
-- Admin interface: [http://localhost:8001/admin](http://localhost:8001/admin)
+- Main API: [http://localhost:8000/api](http://localhost:8000)
+- Admin interface: [http://localhost:8000/admin](http://localhost:8000/admin)
 
 ## 📚 API Documentation
 
