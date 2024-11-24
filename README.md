@@ -16,6 +16,91 @@ A Django-based REST API that allows listing and managing Pokemon data by consumi
 - pip (Python package installer)
 - Virtual environment tool
 - Redis server
+- PostgreSQL
+
+### Installing PostgreSQL
+
+#### On Ubuntu/Debian:
+
+```shellscript
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+```
+
+To start the PostgreSQL service:
+
+```shellscript
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+```
+
+#### On macOS (using Homebrew):
+
+```shellscript
+brew install postgresql
+```
+
+To start the PostgreSQL service:
+
+```shellscript
+brew services start postgresql
+```
+
+#### On Windows:
+
+1. Download the PostgreSQL installer from the official PostgreSQL website ([https://www.postgresql.org/download/windows/](https://www.postgresql.org/download/windows/)).
+2. Run the installer and follow the prompts.
+3. During installation, you'll be asked to set a password for the database superuser (postgres).
+4. After installation, you can start PostgreSQL from the Start menu or use the pgAdmin tool that comes with the installation.
+
+
+### Configuring PostgreSQL
+
+After installation, you need to create a database for your project:
+
+1. Access the PostgreSQL prompt:
+
+On Linux:
+
+```shellscript
+sudo -u postgres psql
+```
+
+On macOS:
+
+```shellscript
+psql postgres
+```
+
+On Windows, use pgAdmin or the SQL Shell (psql) from the Start menu.
+
+
+2. Create a new database:
+
+```sql
+CREATE DATABASE pokemondb;
+```
+
+
+3. Create a new user:
+
+```sql
+CREATE USER pokemonuser WITH PASSWORD 'your_password';
+```
+
+
+4. Grant privileges to the user on the database:
+
+```sql
+GRANT ALL PRIVILEGES ON DATABASE pokemondb TO pokemonuser;
+```
+
+
+5. Exit the PostgreSQL prompt:
+
+```plaintext
+\q
+```
 
 ### Installing Redis Server
 
