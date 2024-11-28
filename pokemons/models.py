@@ -8,7 +8,7 @@ class Type(models.Model):
 
 class Ability(models.Model):
     name = models.CharField(max_length=100)
-    effect = models.CharField(max_length=255, null=False, default='No effect')
+    effect = models.CharField(max_length=510, null=False, default='No effect')
     
     def __str__(self):
         return self.name

@@ -53,7 +53,7 @@ class Command(BaseCommand):
     @sync_to_async
     def process_abilities(self, pokemon, abilities):
         for ability_info in abilities:
-            ability, _ = Ability.objects.get_or_create(
+            ability, _ = Ability.objects.update_or_create(
                 name=ability_info['name'],
                 defaults={'effect': ability_info['effect']}
             )
@@ -78,7 +78,7 @@ class Command(BaseCommand):
                            if entry['language']['name'] == 'en'), '')
             abilities_data.append({
                 'name': ability_detail['name'],
-                'effect': effect[:255] if effect else 'No effect'
+                'effect': effect[:510] if effect else 'No effect'
             })
 
         await self.process_abilities(pokemon, abilities_data)
