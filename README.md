@@ -235,15 +235,15 @@ python manage.py runserver 8000
 
 The application will be available at:
 
-- Main API: [http://localhost:8000/api](http://localhost:8000)
+- Main API: [http://localhost:8000/api/pokemons/](http://localhost:8000/api/pokemons/)
 - Admin interface: [http://localhost:8000/admin](http://localhost:8000/admin)
 
 ## 📚 API Documentation
 
 ### Endpoints
 
-- `GET /api/pokemon/` - List all Pokemon
-- `GET /api/pokemon/{id}/` - Get Pokemon details
+- `GET /api/pokemons/` - List all Pokemon
+- `GET /api/pokemons/{id}/` - Get Pokemon details
 - `POST /api/import-pokemon/` - Start Pokemon import process
 
 ### WebSocket
