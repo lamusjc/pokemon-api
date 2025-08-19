@@ -155,7 +155,7 @@ For Windows:
 ```shellscript
 python -m venv env
 .\env\Scripts\activate.ps1
-````
+```
 
 For Linux/MacOS:
 
